@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XENO | Image, Audio & Video to URL</title>
+    <meta name="description"
+        content="XENO - Fast, secure and easy way to convert your media files to shareable URLs. Supports Image, Audio, and Video.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/megajs@0/dist/main.browser-umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="header-avatar-container">
+                    <img src="developer.jpg" alt="XENO" class="header-avatar">
+                </div>
+                <span>XENO<span>URL</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Features</a>
+                <a href="#">contact dev</a>
+                <a href="#" class="btn-secondary">Discord</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="fade-in">Convert Your Media to <span class="gradient-text">Instant URLs</span></h1>
+            <p class="fade-in-delay">Upload your images, audio, or video files and get a high-quality link in seconds.
+                No registration required.</p>
+        </section>
+
+        <section class="storage-dashboard fade-in">
+            <div class="storage-card">
+                <div class="storage-header">
+                    <div class="storage-title">
+                        <i data-lucide="database" class="storage-icon"></i>
+                        <span>XENO Cloud Storage</span>
+                    </div>
+                    <div class="storage-status" id="cloud-status">Connecting...</div>
+                </div>
+                <div class="storage-metrics">
+                    <div class="metric">
+                        <span class="metric-label">Used Space</span>
+                        <span class="metric-value" id="storage-used">0.00 MB</span>
+                    </div>
+                    <div class="storage-progress">
+                        <div class="progress-fill" id="storage-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Total Capacity</span>
+                        <span class="metric-value">20.00 GB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upload-container fade-in-up">
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <div class="icon-stack">
+                        <i data-lucide="image" class="file-icon img"></i>
+                        <i data-lucide="music" class="file-icon audio"></i>
+                        <i data-lucide="video" class="file-icon video"></i>
+                    </div>
+                    <h3>Drag & Drop your media here</h3>
+                    <p>or click to browse files</p>
+                    <span class="file-info">Supports JPG, PNG, MP4, MP3, WAV (Max 50MB)</span>
+                    <input type="file" id="file-input" hidden multiple>
+                </div>
+            </div>
+
+            <div id="upload-list" class="upload-list hidden">
+                <!-- Upload items will be added here -->
+            </div>
+        </section>
+
+        <section class="stats fade-in">
+            <div class="stat-card">
+                <i data-lucide="zap" class="stat-icon"></i>
+                <div class="stat-info">
+                    <h4>Lightning Fast</h4>
+                    <p>Optimized upload speeds</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="shield-check" class="stat-icon"></i>
+                <div class="stat-info">
+                    <h4>Secure</h4>
+                    <p>End-to-end encrypted transfer</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="infinity" class="stat-icon"></i>
+                <div class="stat-info">
+                    <h4>Unlimited</h4>
+                    <p>No daily upload limits</p>
+                </div>
+            </div>
+        </section>
+        <section class="developer-profile fade-in-up">
+            <div class="developer-card">
+                <div class="dev-avatar-container">
+                    <img src="developer.jpg" alt="Developer Avatar" class="dev-avatar">
+                    <div class="online-status"></div>
+                </div>
+                <div class="dev-info">
+                    <h3>Developed by <span class="gradient-text">XENO</span></h3>
+                    <p>Full-Stack Developer & UI/UX Enthusiast. Creating tools that empower creators.</p>
+                    <div class="dev-socials">
+                        <a href="https://github.com/XENO-SIR-MD" title="GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://instagram.com/4dix_thyan_" title="instagram"><i
+                                data-lucide="instagram"></i></a>
+                        <a href="https://xenosir.vercel.app" target="_blank" title="Portfolio"><i
+                                data-lucide="globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developed by XENO. Professional Media Hosting.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="github"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div id="toaster"></div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
